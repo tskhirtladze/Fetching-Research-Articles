@@ -46,6 +46,7 @@ def search_scopus(api_key, query, max_results=200):
             issn = article.get("prism:issn", "")
             affiliations = article.get("affiliation", [])
             cited_by_count = article.get("citedby-count", "0")
+            publication_type = article.get("subtype", "")
 
             affiliation_list = []
             for affil in affiliations:
@@ -59,6 +60,7 @@ def search_scopus(api_key, query, max_results=200):
                 "First Author": ", ".join(authors_list),
                 "Year": article.get("prism:coverDate", "")[:4],
                 "Journal": article.get("prism:publicationName", "").strip(),
+                "Publication Type": publication_type,
                 "DOI": doi,
                 "Link": link,
                 "Volume": volume,

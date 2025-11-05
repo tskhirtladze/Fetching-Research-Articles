@@ -50,8 +50,10 @@ def main():
             else:
                 full_query = f"{query} AND PUBYEAR > {start_year - 1} AND PUBYEAR < {end_year + 1}"
 
-            # Perform the search with pagination
-            result = search_scopus(api_key, full_query, max_results=max_results)
+            # Display spinner while searching
+            with st.spinner("Searching Scopus... Please wait."):
+                # Perform the search with pagination
+                result = search_scopus(api_key, full_query, max_results=max_results)
 
             # Display results
             if isinstance(result, pd.DataFrame):
