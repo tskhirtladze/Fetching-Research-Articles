@@ -8,6 +8,21 @@ def main():
     # Title
     st.title("Scopus Article Search")
 
+    # App description
+    st.write("""
+    Welcome to the **Scopus Article Search** tool! This app allows you to search the **Scopus** database for academic articles
+    based on your specified keywords and publication year range.
+
+    You can:
+    - Enter your **Scopus API Key** to authenticate.
+    - Define a **search query** using keywords relevant to your research.
+    - Set a **publication year range** to filter articles by publication dates.
+    - Limit the number of results returned to suit your needs.
+
+    After performing a search, you will see the list of articles matching your query and year range. You can then download the results
+    in CSV format for further analysis or citation purposes.
+    """)
+
     # API key input
     api_key = st.text_input("Enter your Scopus API Key", type="password")
 
