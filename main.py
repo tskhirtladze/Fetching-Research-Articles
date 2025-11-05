@@ -61,9 +61,9 @@ def main():
 
             # Build Scopus query with year range
             if start_year == end_year:
-                full_query = f"{query} AND PUBYEAR IS {start_year}"
+                full_query = f'KEY({query}) AND PUBYEAR IS {start_year}'
             else:
-                full_query = f"{query} AND PUBYEAR > {start_year - 1} AND PUBYEAR < {end_year + 1}"
+                full_query = f'KEY({query}) AND PUBYEAR > {start_year - 1} AND PUBYEAR < {end_year + 1}'
 
             # Display spinner while searching
             with st.spinner("Searching Scopus... Please wait."):
