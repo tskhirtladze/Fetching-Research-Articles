@@ -29,7 +29,7 @@ def main():
     # Search query input
     query = st.text_input(
         "Enter your search query (keywords)",
-        placeholder='"Knowledge graphs" AND "large language models"'
+        placeholder='Knowledge graphs AND large language models'
     )
 
     # Get current year for slider upper limit
